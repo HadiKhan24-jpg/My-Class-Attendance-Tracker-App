@@ -82,23 +82,12 @@ export default function ClassTrackApp() {
 
   const BACKEND_URL = process.env.EXPO_PUBLIC_BACKEND_URL;
 
-  // Load fonts and settings on startup
+  // Load settings on startup
   useEffect(() => {
-    loadFonts();
+    setFontsLoaded(true); // Use system fonts for now
     loadSettings();
     fetchClasses();
   }, []);
-
-  const loadFonts = async () => {
-    await Font.loadAsync({
-      'OpenSans-Regular': require('../assets/fonts/OpenSans-Regular.ttf'),
-      'Roboto-Bold': require('../assets/fonts/Roboto-Bold.ttf'),
-      'Lato-Regular': require('../assets/fonts/Lato-Regular.ttf'),
-      'Montserrat-SemiBold': require('../assets/fonts/Montserrat-SemiBold.ttf'),
-      'Poppins-Medium': require('../assets/fonts/Poppins-Medium.ttf'),
-    } as any);
-    setFontsLoaded(true);
-  };
 
   const loadSettings = async () => {
     try {
