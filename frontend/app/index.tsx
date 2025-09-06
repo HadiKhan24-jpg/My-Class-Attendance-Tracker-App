@@ -84,9 +84,18 @@ export default function ClassTrackApp() {
 
   // Load settings on startup
   useEffect(() => {
-    setFontsLoaded(true); // Use system fonts for now
-    loadSettings();
-    fetchClasses();
+    const initializeApp = async () => {
+      try {
+        setFontsLoaded(true); // Use system fonts
+        await loadSettings();
+        await fetchClasses();
+      } catch (error) {
+        console.error('App initialization error:', error);
+        setFontsLoaded(true); // Ensure app loads even with errors
+      }
+    };
+    
+    initializeApp();
   }, []);
 
   const loadSettings = async () => {
