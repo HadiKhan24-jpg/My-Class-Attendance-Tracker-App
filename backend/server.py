@@ -158,7 +158,11 @@ async def mark_attendance(attendance_data: AttendanceCreate):
     else:
         # Create new attendance record
         attendance_obj = AttendanceRecord(**attendance_dict)
-        result = await db.attendance.insert_one(attendance_obj.dict())
+        # Convert the attendance object to dict and ensure date is string
+        attendance_doc = attendance_obj.dict()
+        attendance_doc["date"] = attendance_data.date.isoformat()
+        attendance_doc["marked_at"] = datetime.utcnow().isoformat()
+        result = await db.attendance.insert_one(attendance_doc)
         return attendance_obj
 
 @api_router.post("/attendance/bulk")
