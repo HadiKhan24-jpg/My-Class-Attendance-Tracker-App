@@ -63,9 +63,9 @@ interface AppSettings {
 }
 
 const defaultSettings: AppSettings = {
-  voiceGuidance: false,
+  voiceGuidance: true, // Enable by default for accessibility
   highContrast: true, // Enable by default for accessibility
-  vibrationFeedback: false,
+  vibrationFeedback: true, // Enable by default for accessibility
 };
 
 export default function ClassTrackApp() {
