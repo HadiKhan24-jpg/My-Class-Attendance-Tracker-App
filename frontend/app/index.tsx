@@ -106,6 +106,8 @@ export default function ClassTrackApp() {
       }
     } catch (error) {
       console.error('Error loading settings:', error);
+      // Use default settings on error
+      setSettings(defaultSettings);
     }
   };
 
@@ -115,6 +117,8 @@ export default function ClassTrackApp() {
       setSettings(newSettings);
     } catch (error) {
       console.error('Error saving settings:', error);
+      // Still update the state even if saving fails
+      setSettings(newSettings);
     }
   };
 
