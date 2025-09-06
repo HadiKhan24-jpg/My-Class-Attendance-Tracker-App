@@ -686,10 +686,10 @@ const styles = StyleSheet.create({
     fontSize: 18,
     textAlign: 'center',
     marginTop: 50,
-    fontFamily: 'OpenSans-Regular',
+    fontFamily: Platform.select({ ios: 'System', android: 'Roboto' }),
   },
   
-  // Home Screen Styles (OpenSans font family)
+  // Home Screen Styles (System/Arial font family)
   homeContainer: {
     flex: 1,
     justifyContent: 'center',
@@ -702,13 +702,13 @@ const styles = StyleSheet.create({
   },
   homeTitle: {
     fontSize: 36,
-    fontFamily: 'OpenSans-Regular',
+    fontFamily: Platform.select({ ios: 'System', android: 'sans-serif' }),
     fontWeight: 'bold',
     marginTop: 20,
   },
   homeSubtitle: {
     fontSize: 16,
-    fontFamily: 'OpenSans-Regular',
+    fontFamily: Platform.select({ ios: 'System', android: 'sans-serif' }),
     marginTop: 8,
     opacity: 0.7,
   },
@@ -726,7 +726,7 @@ const styles = StyleSheet.create({
   },
   homeButtonText: {
     fontSize: 18,
-    fontFamily: 'OpenSans-Regular',
+    fontFamily: Platform.select({ ios: 'System', android: 'sans-serif' }),
     fontWeight: '600',
     marginLeft: 12,
   },
@@ -739,7 +739,7 @@ const styles = StyleSheet.create({
   },
   settingsButtonText: {
     marginLeft: 8,
-    fontFamily: 'OpenSans-Regular',
+    fontFamily: Platform.select({ ios: 'System', android: 'sans-serif' }),
   },
 
   // Header Styles (Roboto font family)
@@ -755,14 +755,14 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     fontSize: 20,
-    fontFamily: 'Roboto-Bold',
+    fontFamily: Platform.select({ ios: 'System', android: 'Roboto' }),
     fontWeight: 'bold',
   },
   headerTitleContainer: {
     flex: 1,
   },
 
-  // Select Class Screen Styles (Lato font family)
+  // Select Class Screen Styles (serif font family)
   classListContainer: {
     flex: 1,
     padding: 20,
@@ -781,12 +781,12 @@ const styles = StyleSheet.create({
   },
   classButtonText: {
     fontSize: 16,
-    fontFamily: 'Lato-Regular',
+    fontFamily: Platform.select({ ios: 'Georgia', android: 'serif' }),
     fontWeight: 'bold',
   },
   classSubjectText: {
     fontSize: 14,
-    fontFamily: 'Lato-Regular',
+    fontFamily: Platform.select({ ios: 'Georgia', android: 'serif' }),
     marginTop: 4,
     opacity: 0.9,
   },
@@ -800,19 +800,19 @@ const styles = StyleSheet.create({
   reportsButtonText: {
     color: 'white',
     fontSize: 12,
-    fontFamily: 'Lato-Regular',
+    fontFamily: Platform.select({ ios: 'Georgia', android: 'serif' }),
     marginTop: 4,
   },
 
-  // Attendance Screen Styles (Montserrat font family)
+  // Attendance Screen Styles (monospace font family)
   attendanceTitle: {
     fontSize: 18,
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: Platform.select({ ios: 'Courier New', android: 'monospace' }),
     fontWeight: 'bold',
   },
   attendanceSubtitle: {
     fontSize: 14,
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: Platform.select({ ios: 'Courier New', android: 'monospace' }),
     marginTop: 4,
     opacity: 0.7,
   },
@@ -831,12 +831,12 @@ const styles = StyleSheet.create({
   },
   studentName: {
     fontSize: 16,
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: Platform.select({ ios: 'Courier New', android: 'monospace' }),
     fontWeight: '600',
   },
   studentRoll: {
     fontSize: 12,
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: Platform.select({ ios: 'Courier New', android: 'monospace' }),
     marginTop: 2,
     opacity: 0.6,
   },
@@ -855,7 +855,7 @@ const styles = StyleSheet.create({
   attendanceButtonText: {
     color: 'white',
     fontSize: 10,
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: Platform.select({ ios: 'Courier New', android: 'monospace' }),
     marginLeft: 4,
   },
   presentButton: {
@@ -887,7 +887,7 @@ const styles = StyleSheet.create({
   footerButtonText: {
     color: 'white',
     fontSize: 14,
-    fontFamily: 'Montserrat-SemiBold',
+    fontFamily: Platform.select({ ios: 'Courier New', android: 'monospace' }),
     marginLeft: 8,
     fontWeight: '600',
   },
@@ -898,14 +898,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#757575',
   },
 
-  // Reports Screen Styles (Poppins font family)
+  // Reports Screen Styles (Helvetica font family)
   reportsContainer: {
     flex: 1,
     padding: 20,
   },
   reportsTitle: {
     fontSize: 18,
-    fontFamily: 'Poppins-Medium',
+    fontFamily: Platform.select({ ios: 'Helvetica Neue', android: 'sans-serif-medium' }),
     fontWeight: '600',
     marginBottom: 20,
     textAlign: 'center',
@@ -922,7 +922,7 @@ const styles = StyleSheet.create({
   tableHeaderText: {
     flex: 1,
     fontSize: 12,
-    fontFamily: 'Poppins-Medium',
+    fontFamily: Platform.select({ ios: 'Helvetica Neue', android: 'sans-serif-medium' }),
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -934,7 +934,7 @@ const styles = StyleSheet.create({
   tableCellText: {
     flex: 1,
     fontSize: 11,
-    fontFamily: 'Poppins-Medium',
+    fontFamily: Platform.select({ ios: 'Helvetica Neue', android: 'sans-serif-medium' }),
     textAlign: 'center',
   },
   exportButton: {
@@ -948,12 +948,12 @@ const styles = StyleSheet.create({
   exportButtonText: {
     color: 'white',
     fontSize: 16,
-    fontFamily: 'Poppins-Medium',
+    fontFamily: Platform.select({ ios: 'Helvetica Neue', android: 'sans-serif-medium' }),
     marginLeft: 8,
     fontWeight: '600',
   },
 
-  // Settings Screen Styles (OpenSans font family)
+  // Settings Screen Styles (System font family)
   settingsContainer: {
     flex: 1,
     padding: 20,
@@ -973,7 +973,7 @@ const styles = StyleSheet.create({
   },
   settingLabel: {
     fontSize: 16,
-    fontFamily: 'OpenSans-Regular',
+    fontFamily: Platform.select({ ios: 'System', android: 'Roboto' }),
     marginLeft: 15,
   },
   toggle: {
