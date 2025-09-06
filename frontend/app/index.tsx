@@ -89,6 +89,11 @@ export default function ClassTrackApp() {
         setFontsLoaded(true); // Use system fonts
         await loadSettings();
         await fetchClasses();
+        
+        // Welcome announcement for accessibility
+        setTimeout(() => {
+          speakText('Welcome to ClassTrack Attendance App. Accessibility features are enabled by default including voice guidance, high contrast mode, and vibration feedback. You can customize these settings by tapping the Settings button in the top right corner.');
+        }, 1000);
       } catch (error) {
         console.error('App initialization error:', error);
         setFontsLoaded(true); // Ensure app loads even with errors
