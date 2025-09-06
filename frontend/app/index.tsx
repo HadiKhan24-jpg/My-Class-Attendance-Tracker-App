@@ -64,7 +64,7 @@ interface AppSettings {
 
 const defaultSettings: AppSettings = {
   voiceGuidance: false,
-  highContrast: false,
+  highContrast: true, // Enable by default for accessibility
   vibrationFeedback: false,
 };
 
