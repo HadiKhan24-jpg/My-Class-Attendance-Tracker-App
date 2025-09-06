@@ -137,11 +137,17 @@ export default function ClassTrackApp() {
   const fetchClasses = async () => {
     try {
       const response = await fetch(`${BACKEND_URL}/api/classes`);
-      const data = await response.json();
-      setClasses(data);
+      if (response.ok) {
+        const data = await response.json();
+        setClasses(data);
+      } else {
+        console.warn('Failed to fetch classes, using empty array');
+        setClasses([]);
+      }
     } catch (error) {
       console.error('Error fetching classes:', error);
-      Alert.alert('Error', 'Failed to load classes');
+      // Don't show alert during initialization, just use empty array
+      setClasses([]);
     }
   };
 
